@@ -30,11 +30,20 @@ function updateCalendar() {
         calendarDays.appendChild(dayElement);
     }
     
+    // Get today's date
+    const today = new Date();
+    
     // Add cells for each day of the current month
     for (let i = 1; i <= lastDay.getDate(); i++) {
         const dayElement = document.createElement('div');
         dayElement.textContent = i;
         dayElement.classList.add('day');
+        
+        // Check if this day is today
+        if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+            dayElement.classList.add('today');
+        }
+        
         calendarDays.appendChild(dayElement);
     }
 
