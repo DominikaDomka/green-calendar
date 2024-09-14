@@ -46,8 +46,9 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 14px;
-    border-radius: 50%;
+    border-radius: 5px; /* Changed from 50% to 5px for square with rounded edges */
     transition: background-color 0.3s;
+    aspect-ratio: 1; /* Ensures the day cells remain square */
 }
 .day:not(.other-month):hover {
     background-color: #c8e6c9;
